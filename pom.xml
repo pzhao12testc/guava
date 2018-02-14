@@ -18,7 +18,6 @@
     <test.include>%regex[.*.class]</test.include>
     <truth.version>0.35</truth.version>
     <animal.sniffer.version>1.14</animal.sniffer.version>
-    <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
   </properties>
   <issueManagement>
     <system>GitHub Issues</system>
@@ -84,25 +83,7 @@
         </excludes>
       </testResource>
     </testResources>
-    <plugins>
-      <plugin>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>${maven-javadoc-plugin.version}</version>
-      </plugin>
-    <plugin>
-                <groupId>org.ekstazi</groupId>
-                <artifactId>ekstazi-maven-plugin</artifactId>
-                <version>5.0.1</version>
-                <executions>
-                    <execution>
-                        <id>ekstazi</id>
-                        <goals>
-                            <goal>select</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+
     <pluginManagement>
       <plugins>
         <plugin>
@@ -163,7 +144,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>${maven-javadoc-plugin.version}</version>
+          <version>3.0.0</version>
           <configuration>
             <quiet>true</quiet>
             <notimestamp>true</notimestamp>
@@ -219,7 +200,22 @@
         </plugin>
       </plugins>
     </pluginManagement>
-  </build>
+  <plugins>
+            <plugin>
+                <groupId>org.ekstazi</groupId>
+                <artifactId>ekstazi-maven-plugin</artifactId>
+                <version>4.6.3</version>
+                <executions>
+                    <execution>
+                        <id>ekstazi</id>
+                        <goals>
+                            <goal>select</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
   <distributionManagement>
     <site>
       <id>guava-site</id>
